@@ -220,3 +220,37 @@ window.onload = () => {
     showDashboard();
   }
 };
+// الوظيفة 7 — حفظ تلقائي
+document.addEventListener("input", (e) => {
+  if (e.target.closest("#project-form")) {
+    const draft = {
+      title: document.getElementById("proj-title")?.value,
+      desc: document.getElementById("proj-desc")?.value,
+      deadline: document.getElementById("proj-deadline")?.value
+    };
+    localStorage.setItem("draft-project", JSON.stringify(draft));
+  }
+});
+
+// الوظيفة 10 — الإشعارات
+let notifications = [];
+
+async function loadNotifications() {
+  try {
+    const res = await axios.get(`${API}/notifications`, {
+      headers: { Authorization: `Bearer ${getToken()}` }
+    });
+    notifications = res.data;
+    updateBadge();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function updateBadge() {
+  const unread = notifications.filter(n => !n.read).length;
+  const badge = document.getElementById("notif-badge");
+  if (badge) badge.textContent = unread > 0 ? unread : "";
+}
+
+setInterval(loadNotifications, 30000);
