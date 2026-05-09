@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Auth */
+#auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 380px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.auth-box h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background: #764ba2;
+}
+
+.auth-box span {
+  color: #667eea;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Nav */
+nav {
+  background: #667eea;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 { font-size: 1.5rem; }
+
+nav button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #667eea;
+}
+
+/* Section */
+.section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Form */
+.form-box {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.form-box input, .form-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-box button {
+  padding: 10px 20px;
+  margin: 6px 4px 0 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-box button:first-of-type {
+  background: #667eea;
+  color: white;
+}
+
+/* Project Card */
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 { color: #333; margin-bottom: 8px; }
+
+.project-card .badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #e8f0fe;
+  color: #667eea;
+}
+
+.project-card button {
+  padding: 6px 12px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-delete { background: #ff4757; color: white; }
+.btn-tasks { background: #667eea; color: white; }
+
+/* Task Card */
+.task-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card .priority-haute { border-left: 4px solid #ff4757; }
+.task-card .priority-moyenne { border-left: 4px solid #ffa502; }
+.task-card .priority-basse { border-left: 4px solid #2ed573; }
