@@ -3,7 +3,7 @@ const Project = require("../models/Project");
 const Task = require("../models/Task");
 const auth = require("../middleware/auth");
 
-// جلب كل المشاريع
+
 router.get("/", auth, async (req, res) => {
   try {
     const { page = 1, limit = 10 } = req.query;
@@ -19,7 +19,6 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-// إنشاء مشروع
 router.post("/", auth, async (req, res) => {
   try {
     const project = await Project.create({ ...req.body, owner: req.user.id });
@@ -29,7 +28,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-// تعديل مشروع
+
 router.put("/:id", auth, async (req, res) => {
   try {
     const project = await Project.findOneAndUpdate(
@@ -44,7 +43,7 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-// حذف مشروع
+
 router.delete("/:id", auth, async (req, res) => {
   try {
     const project = await Project.findOneAndDelete({ _id: req.params.id, owner: req.user.id });
@@ -56,7 +55,7 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
-// جلب مهام مشروع
+
 router.get("/:id/tasks", auth, async (req, res) => {
   try {
     const tasks = await Task.find({ project: req.params.id }).populate("assignedTo", "name email");
@@ -66,7 +65,7 @@ router.get("/:id/tasks", auth, async (req, res) => {
   }
 });
 
-// إضافة عضو
+
 router.post("/:id/members", auth, async (req, res) => {
   try {
     const User = require("../models/User");
