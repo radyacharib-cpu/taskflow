@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Task = require("../models/Task");
 const auth = require("../middleware/auth");
 
-// إنشاء مهمة
+
 router.post("/", auth, async (req, res) => {
   try {
     const task = await Task.create(req.body);
@@ -12,7 +12,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-// تعديل مهمة
+
 router.put("/:id", auth, async (req, res) => {
   try {
     const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -22,7 +22,7 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-// تحديث الحالة فقط
+
 router.patch("/:id/status", auth, async (req, res) => {
   try {
     const task = await Task.findByIdAndUpdate(
@@ -36,7 +36,7 @@ router.patch("/:id/status", auth, async (req, res) => {
   }
 });
 
-// حذف مهمة
+
 router.delete("/:id", auth, async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);
