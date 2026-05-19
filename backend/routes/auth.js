@@ -2,7 +2,7 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-// التسجيل
+
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// الدخول
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
